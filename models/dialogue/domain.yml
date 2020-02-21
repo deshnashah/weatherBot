@@ -1,0 +1,40 @@
+action_factory: null
+action_names:
+- utter_greet
+- utter_goodbye
+- utter_ask_location
+- utter_ask_date
+- action_weather
+actions:
+- utter_greet
+- utter_goodbye
+- utter_ask_location
+- utter_ask_date
+- actions.ActionWeather
+config:
+  store_entities_as_slots: true
+entities:
+- location
+- date
+intents:
+- greet
+- goodbye
+- inform
+slots:
+  date:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  location:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+templates:
+  utter_ask_date:
+  - text: For today or any specific date (dd-mm-yyyy) ?
+  utter_ask_location:
+  - text: In what location ?
+  utter_goodbye:
+  - text: Talk to you later.
+  - text: Bye bye :(
+  utter_greet:
+  - text: Hello ! How can I help ?
+topics: []
